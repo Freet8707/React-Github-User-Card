@@ -1,16 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import axios from 'axios'
 
 class App extends React.Component {
+  state = {
+    myCard: []
+  }
 
+  componentDidMount(){
+    axios.get('https://api.github.com/users/Freet8707')
+    .then(res => {        
+      console.log(res)
+      this.setState({
+        myCard: res.data
+      })
+    })
+    .catch(err => console.log('jf: App.js: App: CDM: error', err))
+  }
+  
   render() {
-  return (
-    <div className="App">
-        <h1>Github User Cards!</h1>
-    </div>
-  );
-}
+    return (
+      <div>
+          <h1 style={{textAlign: 'center'}}>Github User Cards!</h1>
+      </div>
+    );
+  }
 }
 
 export default App;
