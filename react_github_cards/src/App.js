@@ -1,5 +1,7 @@
 import React from 'react';
-import axios from 'axios'
+import axios from 'axios';
+
+import MyCard from './components/MyCard'
 
 class App extends React.Component {
   state = {
@@ -21,6 +23,7 @@ class App extends React.Component {
     return (
       <div>
           <h1 style={{textAlign: 'center'}}>Github User Cards!</h1>
+          <MyCard card={this.state.myCard} />
       </div>
     );
   }
