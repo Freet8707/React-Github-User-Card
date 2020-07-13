@@ -74,7 +74,7 @@ const MyCard = props => {
                 </CardDiv> :
                 <p>There was an error retrieving the information!</p>
             }
-            <Route path='/followers'>
+            <Route exact path='/followers'>
                 <FollowerCards followerCards={props.followerCards} />
             </Route>
         </>        

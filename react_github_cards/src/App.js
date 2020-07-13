@@ -37,7 +37,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-          <h1 style={{textAlign: 'center', fontFamily: '"Montserrat", sans-serif', fontSize: '2.5rem'}}>Github User Cards!</h1>
+          <h1 style={{textAlign: 'center', fontFamily: '"Montserrat", sans-serif', fontSize: '2.5rem'}}>Github User Cards App!</h1>
           <MyCard card={this.state.myCard} followerCards={this.state.followerCards} />
       </div>
     );
