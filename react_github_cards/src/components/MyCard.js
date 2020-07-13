@@ -5,6 +5,9 @@ const CardDiv = styled.div`
     width: 100%;
     max-width: 850px;
     margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #60f2ef;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -18,7 +21,17 @@ const CardDiv = styled.div`
     }
     p {
         font-size: 1.6rem;
-        font-family: 'Montserrat', sans-serif;        
+        font-family: 'Montserrat', sans-serif; 
+        margin: 0;
+        padding: 15px 0;
+        span {
+            color: dodgerblue;
+            font-weight: 600;
+        }       
+    }
+    a {
+        font-size: 1.6rem;
+        font-family: 'Montserrat', sans-serif;            
     }
     div {
         width: 100%;
@@ -31,15 +44,17 @@ const CardDiv = styled.div`
         div {            
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
         }
     }
 `;
 
 const MyCard = props => {
-
+    console.log(props.followerCards)
     return (
         <>
-            <h1>My GitHub Card</h1>
+            <h1 style={{width: '100%', fontFamily: '"Montserrat", sans-serif', borderBottom: '2px solid black', marginBottom: '20px', paddingBottom: '20px', fontSize: '2rem', color: 'blue', textAlign: 'center'}}>My GitHub Card</h1>
             {props.card.id !== 0 ? 
                 <CardDiv>
                     <div>
@@ -49,10 +64,10 @@ const MyCard = props => {
                             <h2><span>My Name:</span> {props.card.name} </h2>
                         </div>
                     </div>
-                    <p>following: {props.card.following} </p>
-                    <p>followers: {props.card.followers} </p>
-                    <p>Bio: {props.card.bio} </p>
-                    <a href={props.card.url} target='_blank'>{props.card.url}</a>
+                    <p><span>following:</span> {props.card.following} </p>
+                    <p><span>followers:</span> {props.card.followers} </p>
+                    <p><span>Bio:</span> {props.card.bio} </p>
+                    <a href={props.card.html_url} target='_blank'>{props.card.html_url}</a>
                 </CardDiv> :
                 <p>There was an error retrieving the information!</p>
             }
