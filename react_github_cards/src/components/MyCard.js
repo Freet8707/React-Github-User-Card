@@ -1,5 +1,8 @@
 import React from 'react';
+import { Link, Route } from 'react-router-dom'
 import styled from 'styled-components'
+
+import FollowerCards from './FollowerCards.js'
 
 const CardDiv = styled.div`
     width: 100%;
@@ -65,12 +68,15 @@ const MyCard = props => {
                         </div>
                     </div>
                     <p><span>following:</span> {props.card.following} </p>
-                    <p><span>followers:</span> {props.card.followers} </p>
+                    <p><span>followers:</span> {`${props.card.followers}`} <Link to='/followers' style={{cursor: 'pointer'}}>Click Here</Link> to display follower cards!</p>
                     <p><span>Bio:</span> {props.card.bio} </p>
                     <a href={props.card.html_url} target='_blank'>{props.card.html_url}</a>
                 </CardDiv> :
                 <p>There was an error retrieving the information!</p>
             }
+            <Route path='/followers'>
+                <FollowerCards followerCards={props.followerCards} />
+            </Route>
         </>        
     )
 }
