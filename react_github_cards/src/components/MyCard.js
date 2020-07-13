@@ -68,7 +68,7 @@ const MyCard = props => {
                         </div>
                     </div>
                     <p><span>following:</span> {props.card.following} </p>
-                    <p><span>followers:</span> {`${props.card.followers}`} <Link to='/followers' style={{cursor: 'pointer'}}>Click Here</Link> to display follower cards!</p>
+                    <p><span>followers:</span> {props.card.followers} <Link to='/followers' style={{cursor: 'pointer'}}>Click Here</Link> to display follower cards!</p>
                     <p><span>Bio:</span> {props.card.bio} </p>
                     <a href={props.card.html_url} target='_blank'>{props.card.html_url}</a>
                 </CardDiv> :
